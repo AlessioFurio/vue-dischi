@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>vue-email-list</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="root">
+            <div class="container-dischi">
+                <div v-for="disco in dischi" class="disco">
+                    <h4>{{disco.title}}</h4>
+                    <div class="wp-img">
+                        <img :src="disco.poster" :alt="disco.title">
+                    </div>
+                    <p>autore: {{disco.author}}</p>
+                    <p>genere: {{disco.genre}}</p>
+                    <p>anno: {{disco.year}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    <script src="main.js" charset="utf-8"></script>
+
+    </body>
+</html>
