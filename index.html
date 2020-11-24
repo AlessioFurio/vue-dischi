@@ -19,7 +19,8 @@
 
         <div id="root">
 
-            <select @change="onChange($event)" v-model="key" id="filtro" class="" name="">
+            <select v-model="selectedGenre" id="filtro" class="" name="">
+                <option value="">Tutti i tipi</option>
                 <option v-for="(elemento, indiceGenere) in generi"
                 :value="elemento">
                 {{elemento}}
@@ -28,7 +29,7 @@
 
 
             <div class="container-dischi">
-                <div v-for="disco in dischi" class="disco" v-if="disco.genre == key">
+                <div v-for="disco in dischi" class="disco" v-if="selectedGenre == disco.genre || selectedGenre == ''">
                     <h4>{{disco.title}}</h4>
                     <div class="wp-img">
                         <img :src="disco.poster" :alt="disco.title">

@@ -5,16 +5,12 @@ var app = new Vue({
 
 	data: {
 		dischi: [],
-		generi: ['all'],
-		key: 'all',
-		bool: false,
+		generi: [],
+		selectedGenre: '',
 	},
 
 	methods: {
-		onChange(event) {
-            console.log(event.target.value);
-			this.bool = true;
-        }
+
 
 	}, // fine methods
 
@@ -33,6 +29,9 @@ var app = new Vue({
 				});
 				console.log(this.generi);
 
+				this.dischi.sort(function(disc1, disc2){
+					return parseInt(disc1.year)-parseInt(disc2.year);  // mi permette di ordinare gli album in ordine di uscita
+				});
 
 			}); // fine then
 	} // fine mounted
